@@ -1,0 +1,110 @@
+@charset "utf-8";
+/* CSS Document */
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+}
+.box{
+    width: 100%;
+    height: 200px;
+    background:url(../img/topbackground.jpg) center top no-repeat;
+    z-index: 1;
+}
+
+.nav{
+    width: 100%;
+    height: 40px;
+    background-color: rgba(255,255,255,0.5)
+}
+.nav-ul{
+    width: 1400px;
+    margin: 0 auto;
+}
+.nav-li1{
+    padding: 8px 10px 14px;
+    float: left;
+    position: relative;
+    display: inline-block;
+    transition: background-color 1s;
+    -o-transition: background-color 1s;
+    -moz-transition: background-color 1s;
+    -webkit-transition: background-color 1s;
+}
+.nav-a1{
+    text-align: center;
+    font-size: 12px;
+    color: rgba(39,39,39,1.00);
+    text-align: center;
+    
+}
+.nav-li1:hover{
+    background-color: rgba(255,255,255,0.80);
+}
+.gamecenter{
+    position: absolute;
+    padding: 10px;
+    left: -1px;
+    top: 60px;
+    width: 400px;
+    height: 250px;
+    border-radius: 0 0 5px 5px;
+    background-color: white;
+    box-shadow: 2px 2px 10px black;
+    display: none;
+}
+.dis{
+   display: block;
+}
+.gamecenter-li1 img{
+    border-radius: 5px;
+}
+.gamecenter-li2{
+    float: left;
+    margin: 10px 0 0 8px;
+}
+.gamecenter-li2 img{
+    border-radius: 10px;
+}
+.gamecenter-li2 span{
+    margin:0 0 0 8px;
+    text-align: center;
+    font-size: 14px;
+    color: rgba(43,43,43,1.00);
+}
+.gamecenter-li3{
+    position: relative;
+    float:right;
+    top: -136px;
+    box-shadow: -5px 0px 5px -5px black;
+    
+}
+.li3-div1 span{
+    font-size: 12px;
+    position: relative;
+    right: -20px;
+    color:aquamarine;
+}
+.li3-div2{
+    padding: 6px 6px 6px 10px;
+}
+.li3-div2 span{
+    font-size: 8px;
+    color: rgba(43,43,43,1.00);
+    text-align: center;
+    transition: background-color 1s;
+    -o-transition: background-color 1s;
+    -moz-transition: background-color 1s;
+    -webkit-transition: background-color 1s;
+}
+.li3-div2:hover{
+    background-color:rgba(228,247,255,.5);
+    
+}
+.li3-div2:hover span{
+    color: aquamarine;
+}
+.logo{
+    left: 15%;
+}
