@@ -8,22 +8,28 @@
 }
 .box{
     width: 100%;
-    height: 200px;
     background:url(../img/topbackground.jpg) center top no-repeat;
     z-index: 1;
 }
-
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.logoAll{
+    width: 1280px;
+    margin: 0 auto;
+}
 .nav{
     width: 100%;
-    height: 40px;
     background-color: rgba(255,255,255,0.5)
 }
 .nav-ul{
-    width: 1400px;
+    width: 1280px;
     margin: 0 auto;
 }
 .nav-li1{
-    padding: 8px 10px 14px;
+    padding: 6px 10px 16px;
     float: left;
     position: relative;
     display: inline-block;
@@ -87,7 +93,7 @@
     color:aquamarine;
 }
 .li3-div2{
-    padding: 6px 6px 6px 10px;
+    padding: 4px 6px 6px 10px;
 }
 .li3-div2 span{
     font-size: 8px;
@@ -106,5 +112,7 @@
     color: aquamarine;
 }
 .logo{
-    left: 15%;
+    margin: 0 auto;
+    width: 1400px;
+    height: 200px;
 }
