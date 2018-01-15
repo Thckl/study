@@ -31,7 +31,7 @@ $(function () {
             t = setTimeout(function () {
 
                 $(is).children("ul").animate({
-                    'top': 40 + 'px',
+                    'top': 38 + 'px',
                     'opacity': 1
                 }, 200)
                 $(is).children("ul").show();
@@ -66,7 +66,7 @@ $(function(){
         
         /*图片移动位置*/
         $(".scroll").css({
-            left: num
+            'left': num
         })
 
     }
