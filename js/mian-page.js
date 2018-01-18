@@ -20,7 +20,7 @@ var t;
 //     });
 // });
 
-/*二级菜单动效*/
+/*顶部导航二级菜单动效*/
 $(function () {
     
     $(".nav-ul li").hover(
@@ -31,7 +31,7 @@ $(function () {
             t = setTimeout(function () {
 
                 $(is).children("ul").animate({
-                    'top': 38 + 'px',
+                    'top': 40 + 'px',
                     'opacity': 1
                 }, 200)
                 $(is).children("ul").show();
@@ -39,7 +39,7 @@ $(function () {
         },
         function () {
         
-        /*设定鼠标移出时清楚效果*/
+        /*设定鼠标移出时清除效果*/
             clearTimeout(t);
             
         /*并添加移出动画*/
@@ -73,4 +73,23 @@ $(function(){
     /*滚动速度*/
     var timer = setInterval(goLeft, 20);
     
+});
+
+/*中部分区二级菜单动效*/
+$(function () {
+    
+    $(".item-ul li").hover(
+        function () {
+            var is = $(this);
+            
+            /*设定鼠标移入时显示*/
+                $(is).children("ul").show();
+       
+        },
+        function () {
+        
+            /*鼠标移出时隐藏*/
+            $(this).children("ul").hide();
+        }
+    );
 });

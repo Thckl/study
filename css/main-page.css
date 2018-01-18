@@ -64,6 +64,7 @@
     background-color: white;
     box-shadow: 1px 1px 5px rgba(181,181,181,1.00);
     display: none;
+    z-index: 2;
 }
 .gamecenter-li1 img{
     border-radius: 5px;
@@ -101,9 +102,9 @@
     padding-top: 4px;
 }
 .li3-div2 span{
-    width: 100%;
-    height: 100%;
+    position: absolute;
     padding: 10px;
+    width: 100%;
     font: 8px Helvetica Neue,Helvetica,Arial,Microsoft Yahei,Hiragino Sans GB,Heiti SC,WenQuanYi Micro Hei,sans-serif;
     line-height: 8px;
     color: rgba(43,43,43,1.00);
@@ -120,7 +121,7 @@
     color: aquamarine;
 }
 
-
+/*二维码*/
 .card-nav2{
     position: absolute;
     top: 60px;
@@ -129,6 +130,7 @@
     left: -23px;
     background: url(../img/orcode-frame.png) center top no-repeat;
     display: none;
+    z-index: 2;
 }
 .card-nav2 img{
     margin-top: 28px;
@@ -196,7 +198,7 @@
     border: 1px solid rgba(217,217,217,1.00); 
     display: none;
     background-color: white;
-    
+    z-index: 2;
     
 }
 .login-li1{
@@ -214,6 +216,7 @@
     position: relative;
     overflow: hidden;
     background:url(../img/scrollbackground.jpg) top center no-repeat;
+    
 }
 
 .scroll {
@@ -271,6 +274,7 @@
     background-color: white;
     box-shadow: 0px 1px 5px rgba(181,181,181,1.00);
     border-radius: 0 0 5px 5px;
+    z-index: 2;
 }
 .history-txt{
     padding-top: 40px;
@@ -336,6 +340,7 @@
     display: none;
     background-color: white;
     border-radius: 0px 0px 5px 5px;
+    z-index: 2;
 }
 .contribute-box li{
     float: left;
@@ -354,9 +359,182 @@
 }
 .contribute-link img{
     margin: 8px 20px;
-    color:rgba(255,196,245,1.00);
+    color:#FFC4F5;
 }
 .contribute-link div{
     font: 12px Helvetica Neue,Helvetica,Arial,Microsoft Yahei,Hiragino Sans GB,Heiti SC,WenQuanYi Micro Hei,sans-serif;
-    color: #f1b2e4;
+    color: #FFC4F5;
+}
+
+/*排行榜*/
+.rank{
+    position: relative;
+    float: right;
+    top: 50px;
+    width:68px;
+    height: 32px;
+    border-radius: 5px;
+    background-color:rgba(255,255,255,.8);
+    display: inline-block;
+    transition: background-color .5s;
+    -o-transition: background-color .5s;
+    -moz-transition: background-color .5s;
+    -webkit-transition: background-color .5s;
+}
+.rank:hover {
+    background-color:rgba(251,255,220,1.00);
+}   
+.rank img{
+    margin:2px 4px;
+}
+.rank span{
+    position: absolute;
+    margin-top: 8px;
+    color:rgba(0,0,0,.8);
+    font:12px Helvetica Neue,Helvetica,Arial,Microsoft Yahei,Hiragino Sans GB,Heiti SC,WenQuanYi Micro Hei,sans-serif;
+}
+
+/*搜索*/
+.search{
+    position: relative;
+    float: right;
+    top: 48px;
+    width: 272px;
+    height: 32px;
+    border: 2px solid rgba(88,88,88,.1);
+}
+.search input{
+    width: 218px;
+    height: 32px;
+    border-radius: 5px;
+    padding: 0 44px 0 10px;
+    outline: none;
+    border: 0;
+    font:12px Helvetica Neue,Helvetica,Arial,Microsoft Yahei,Hiragino Sans GB,Heiti SC,WenQuanYi Micro Hei,sans-serif;
+    background-color:rgba(255,255,255,.8);
+    transition: background-color .5s;
+    -o-transition: background-color .5s;
+    -moz-transition: background-color .5s;
+    -webkit-transition: background-color .5s;
+}
+.search input:hover {
+    background-color:rgba(253,255,205,1.00);
+}
+.search img{
+    position: relative;
+    float: right;
+    margin-top: -26px;
+    margin-right: 14px;
+}
+
+/*项目分区导航*/
+.item-nav{
+    width: 1000px;
+    min-width: 1000px;
+    margin: 0 auto;
+}
+.item-li1{
+    position: relative;
+    float: left;
+    margin: 8px 10px 10px;
+}
+.item-li2{
+    position: relative;
+    float: left;
+    margin: 10px 10px;
+}
+.item-li3{
+    float: left;
+    margin: 0 10px 10px;
+}
+.item-div1{
+    padding: 1px;
+    margin: 4px 0;
+    text-align: center;
+    background-color: #FFC4F5;
+    color: white;
+    border-radius: 3px;
+    font: 12px Helvetica Neue,Helvetica,Arial,Microsoft Yahei,Hiragino Sans GB,Heiti SC,WenQuanYi Micro Hei,sans-serif;
+    line-height: 12px;
+}
+.item-div5{
+    margin: 2px 0 2px;
+}
+.item-div5 img{
+    margin-left: 2px;
+}
+.item-span1{
+   font: 12px Helvetica Neue,Helvetica,Arial,Microsoft Yahei,Hiragino Sans GB,Heiti SC,WenQuanYi Micro Hei,sans-serif;
+   line-height: 12px;
+   text-align: center;
+   color:rgba(0,0,0,.8);
+}
+.item-span1:hover{
+   color:aquamarine;
+}
+.item-span2{
+   padding-left: 2px;
+   font: 12px Helvetica Neue,Helvetica,Arial,Microsoft Yahei,Hiragino Sans GB,Heiti SC,WenQuanYi Micro Hei,sans-serif;
+   line-height: 12px;
+   text-align: center;
+   color:rgba(0,0,0,.8);
+}
+/*项目分区导航二级菜单*/
+.item-menu{
+   position: absolute;
+   width: 130px;
+   top: 34px;
+   left: -20px;
+   border-radius: 3px;
+   background-color: white;
+   box-shadow: 1px 1px 5px rgba(181,181,181,1.00);
+   overflow: hidden;
+   display: none;
+   z-index: 2;
+}
+.item-menu li:hover{
+   background-color: rgba(174,196,255,1.00);
+}
+.item-menu li{
+   height: 30px;
+   width: 100%;
+   transition: background-color .5s;
+   -o-transition: background-color .5s;
+   -moz-transition: background-color .5s;
+   -webkit-transition: background-color .5s;
+}
+
+.item-menu span{
+   float: left;
+   padding-top: 7px;
+   line-height:12px;
+   color: rgba(0,0,0,.8);
+   font: 12px Helvetica Neue,Helvetica,Arial,Microsoft Yahei,Hiragino Sans GB,Heiti SC,WenQuanYi Micro Hei,sans-serif;
+   text-align: center;
+}
+.left-img{
+   float: left;
+   padding-top: 11px;
+   margin-left: 8px;
+   margin-right: 8px;
+   transition: margin-left .5s;
+   -o-transition: margin-left .5s;
+   -moz-transition: margin-left .5s;
+   -webkit-transition: margin-left .5s;
+}
+.right-img{
+   float: left;
+   position: absolute;
+   padding-top: 11px;
+   margin-left:80px;
+   transition: margin-left .5s;
+   -o-transition: margin-left .5s;
+   -moz-transition: margin-left .5s;
+   -webkit-transition: margin-left .5s;
+}
+.item-menu li:hover .left-img{
+   margin-left: 14px;
+}
+.item-menu li:hover .right-img{
+   margin-left: 8px;
 }
