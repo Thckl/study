@@ -93,3 +93,127 @@ $(function () {
         }
     );
 });
+
+/*首页轮播图*/
+window.onload = function () {
+    
+    /*获取*/
+    var Bi = document.getElementById("img-box");
+    var Perv = document.getElementById("prev");
+    var Next = document.getElementById("next");
+    
+    /*定义事件名称为animate*/
+    function animate(offset) {
+        
+        /*定义BiLeft获取Bi的left值+offset*/
+        var BiLeft = parseInt(Bi.style.left) + offset;
+        
+        /*重新给定left属性的值为BiLeft*/
+        Bi.style.left = BiLeft + 'px';
+        
+        /*设定BiLeft限制以达到图片退回的目的*/
+        if (BiLeft > -440) {
+            Bi.style.left = -2200 + 'px';
+        }
+
+        if (BiLeft < -2200) {
+            Bi.style.left = -440 + 'px';
+        }
+    }
+    
+    /*按钮点击切换图片事件*/
+    Perv.onclick = function () {
+        animate(440);
+    }
+    Next.onclick = function () {
+        animate(-440);
+
+    }
+
+    /*通过计时器给定轮播间隔*/
+    var t;
+
+    function play() {
+        t = setInterval(function () {
+            Next.onclick()
+        }, 3000)
+    }
+    play();
+
+    var Box = document.getElementById("scrolall");
+    
+    /*通过清除计时器达到停止的轮播的目的*/
+    function stop() {
+        clearInterval(t);
+    }
+    
+    /*鼠标移入执行停止事件，移出执行播放事件*/
+    Box.onmouseover = stop;
+    Box.onmouseout = play;
+
+    var Bb = document.getElementById("control").getElementsByTagName("span");
+    var Cu = document.getElementById("control-ul").getElementsByTagName("li");
+    var Index = 1;
+
+    /*跟随轮播按钮切换事件*/
+    function Button1() {
+
+        for (var i = 0; i < Bb.length; i++) {
+            if (Bb[i].className == 'spanhover') {
+                Bb[i].className = '';
+            }
+        }
+        Bb[Index - 1].className = 'spanhover';
+    }
+    
+    /*跟随轮播标题切换事件*/
+    function Txt1() {
+
+        for (var a = 0; a < Cu.length; a++) {
+            if (Cu[a].className == 'controlscroll-li1') {
+                Cu[a].className = 'controlscroll-li2';
+            }
+        }
+        Cu[Index - 1].className = 'controlscroll-li1';
+    }
+    
+    /*左切换按钮点击事件*/
+    Perv.onclick = function () {
+        
+        /*当前按钮/文字层数减1达到切换效果*/
+        Index -= 1;
+        if (Index < 1) {
+            Index = 5;
+        }
+        Button1();
+        Txt1();
+        animate(440);
+    }
+    
+    /*右切换按钮点击事件*/
+    Next.onclick = function () {
+    /*当前按钮/文字层数加1达到切换效果*/
+        Index += 1;
+        if (Index > 5) {
+            Index = 1;
+        }
+        Button1();
+        Txt1();
+        animate(-440);
+    }
+    
+    
+    for (var i = 0; i < Bb.length; i++) {
+        (function (i) {
+            Bb[i].onclick = function () {
+                var clickIndex = parseInt(this.getAttribute('index'));
+                var offset = 440 * (Index - clickIndex);
+                animate(offset);
+                Index = clickIndex;
+                Button1();
+                Txt1();
+            }
+        })(i)
+
+    }
+}

@@ -1,14 +1,16 @@
 @charset "utf-8";
 /* CSS Document */
+
 * {
     margin: 0;
     padding: 0;
     text-decoration: none;
     list-style: none;
 }
-/*导航全局样式*/
+
 .box{
     width: 100%;
+    min-height: 145px;
     background:url(../img/topbackground.jpg) center top no-repeat;
 }
 .clearfix:after {
@@ -428,6 +430,11 @@
 }
 
 /*项目分区导航*/
+.center-box{
+  width: 1000px;
+  min-width: 1000px;
+  margin: 0 auto;
+}
 .item-nav{
     width: 1000px;
     min-width: 1000px;
@@ -491,7 +498,7 @@
    box-shadow: 1px 1px 5px rgba(181,181,181,1.00);
    overflow: hidden;
    display: none;
-   z-index: 2;
+   z-index: 3;
 }
 .item-menu li:hover{
    background-color: rgba(174,196,255,1.00);
@@ -652,4 +659,105 @@
 }
 .telecast-li2 img{
    margin-top: 15px;
+}
+
+/*轮播图二级菜单*/
+.scrollbox{
+   position: relative;
+   width: 440px;
+   height: 220px;
+   left: 10px;
+   border-radius: 5px;
+   overflow: hidden;
+}
+
+.imgscroll{
+   position: absolute;
+   width: 3080px;
+   height: 220px;
+   -o-transition: left .5s;
+   -moz-transition: left .5s;
+   -webkit-transition: left .5s;
+}
+.imgscroll img{
+   float: left;
+   z-index: 1;
+   transition: left .5s;
+   
+}
+.controlscroll{
+   position: relative;
+   margin-top:185px;
+   z-index: 2;
+   width: 440px;
+   height: 36px;
+   background-color: rgba(0,0,0,.3);
+}
+.controlscroll span{
+   float: left;
+   margin:14px 0 0 20px;
+   width: 6px;
+   height: 6px;
+   background-color: white;
+   border: 2px solid white;
+   border-radius: 50%;
+   cursor: pointer;
+}
+#control .spanhover{
+   margin-top: 12px;
+   width: 10px;
+   height: 10px;
+   background-color:aquamarine;
+}
+
+.arrow {
+    z-index: 2;
+    position: absolute;
+    top: 90px;
+    width: 30px;
+    height: 40px;
+    color: black;
+    background-color:rgba(0,0,0,.3);
+    padding-top: 10px;
+    cursor: pointer;
+    transition: background-color .5s;
+    -o-transition: background-color .5s;
+    -moz-transition: background-color .5s;
+    -webkit-transition: background-color .5s;
+}
+.arrow:hover {
+    background-color:rgba(0,0,0,.7);
+}
+#Box:hover .arrow {
+    display: block;
+}
+#prev {
+    left: 0px;
+}
+#next {
+    right: 0px;
+}
+
+.controlscroll-ul{
+    height: 35px;
+    width: 260px;
+    float: left;
+}
+.controlscroll-li1{
+    position: absolute;
+    margin-top: 8px;
+    padding-left: 10px;
+    display: block;
+    float: left;
+    color: white;
+    font: 14px Helvetica Neue,Helvetica,Arial,Microsoft Yahei,Hiragino Sans GB,Heiti SC,WenQuanYi Micro Hei,sans-serif;
+}
+.controlscroll-li2{
+    position: absolute;
+    margin-top: 8px;
+    padding-left: 10px;
+    display: none;
+    float: left;
+    color: white;
+    font: 14px Helvetica Neue,Helvetica,Arial,Microsoft Yahei,Hiragino Sans GB,Heiti SC,WenQuanYi Micro Hei,sans-serif;
 }
