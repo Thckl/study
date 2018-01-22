@@ -1,26 +1,41 @@
 // JavaScript Document
-var t;
-// $(".nav-li1").hover(function () {
-//     clearTimeout(t);
-//     t = setTimeout(function () {
-//         $(".nav-li1").find(".card-nav").animate({
-//             'top': 40 + 'px',
-//             'opacity': 1
-//         }, 200).addClass("dis");
-//     }, 500);
-// });
+/*开启浏览器时触发事件，判断浏览器窗口宽度并修改*/
+$(window).resize(function() { 
 
-// $(".nav-li1").mouseleave(function () {
-//     clearTimeout(t);
-//     $(this).find(".card-nav").animate({
-//         'top': 50 + 'px',
-//         'opacity': 0
-//     }, 200, function () {
-//         $(".nav-li1").find(".card-nav").removeClass("dis");
-//     });
-// });
+    /*获取浏览器当前宽度*/
+   var bodyw = $(document.body).outerWidth(true); 
+    
+    /*当宽度小于1280px时修改浏览器宽度，导航标签间隔*/
+    if(bodyw<1160){
+    $(document.body).addClass("w1000 l10 w520");
+    $(".show").addClass("hide");
+}else{ 
+
+    /*大于1280px时移除样式，复原*/
+    $(document.body).removeClass("w1000 l10 520");
+    $(".show").removeClass("hide");
+}
+});
+/*浏览器宽度改变时触发事件，判断浏览器窗口大小并修改*/
+$(function() { 
+
+    /*获取浏览器当前宽度*/
+   var bodyw = $(document.body).outerWidth(true); 
+    
+    /*当宽度小于1280px时修改浏览器宽度，导航标签间隔*/
+    if(bodyw<1160){
+    $(document.body).addClass("w1000 l10 w520");
+    $(".show").addClass("hide");
+}else{ 
+
+    /*大于1280px时移除样式，复原*/
+    $(document.body).removeClass("w1000 l10 w520");
+    $(".show").removeClass("hide");
+}
+});
 
 /*顶部导航二级菜单动效*/
+var t;
 $(function () {
     
     $(".nav-ul li").hover(
@@ -201,8 +216,6 @@ window.onload = function () {
         Txt1();
         animate(-440);
     }
-    
-    
     for (var i = 0; i < Bb.length; i++) {
         (function (i) {
             Bb[i].onclick = function () {
@@ -217,3 +230,38 @@ window.onload = function () {
 
     }
 }
+
+/*按钮切换近期视频层*/
+$(function(){
+   $(".button1").click(function(){
+       $(".change1").removeClass("index2").addClass("index1");
+       $(".change2").removeClass("index1").addClass("index2");
+       
+   });
+   $(".button2").click(function(){
+       $(".change1").removeClass("index2").addClass("index1");
+       $(".change3").removeClass("index1").addClass("index2");
+       
+   });
+   $(".button3").click(function(){
+       $(".change2").removeClass("index2").addClass("index1");
+       $(".change3").removeClass("index1").addClass("index2");
+       
+   });
+   $(".button4").click(function(){
+       $(".change2").removeClass("index2").addClass("index1");
+       $(".change1").removeClass("index1").addClass("index2");
+       
+   });
+   $(".button5").click(function(){
+       $(".change3").removeClass("index2").addClass("index1");
+       $(".change1").removeClass("index1").addClass("index2");
+       
+   });
+   $(".button6").click(function(){
+       $(".change3").removeClass("index2").addClass("index1");
+       $(".change2").removeClass("index1").addClass("index2");
+       
+   });
+
+});
