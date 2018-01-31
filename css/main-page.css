@@ -39,9 +39,11 @@
 }
 /*左导航标签样式*/
 .nav-li1 {
-    padding: 12px 10px 12px;
     position: relative;
     display: inline-block;
+    padding: 12px 10px;
+    font: 12px Helvetica Neue, Helvetica, Arial, Microsoft Yahei, Hiragino Sans GB, Heiti SC, WenQuanYi Micro Hei, sans-serif;
+    color: rgba(39,39,39,1.00);
     transition: background-color 1s;
     -o-transition: background-color 1s;
     -moz-transition: background-color 1s;
@@ -51,7 +53,6 @@
     text-align: center;
     font: 12px Helvetica Neue, Helvetica, Arial, Microsoft Yahei, Hiragino Sans GB, Heiti SC, WenQuanYi Micro Hei, sans-serif;
     color: rgba(39,39,39,1.00);
-    text-align: center;
 }
 .nav-li1:hover {
     background-color: rgba(255,255,255,0.80);
@@ -108,7 +109,7 @@
     position: absolute;
     padding: 10px;
     width: 100%;
-    font: 8px Helvetica Neue, Helvetica, Arial, Microsoft Yahei, Hiragino Sans GB, Heiti SC, WenQuanYi Micro Hei, sans-serif;
+    font: 12px Helvetica Neue, Helvetica, Arial, Microsoft Yahei, Hiragino Sans GB, Heiti SC, WenQuanYi Micro Hei, sans-serif;
     line-height: 8px;
     color: rgba(43,43,43,1.00);
     transition: background-color 1s;
@@ -806,9 +807,9 @@
 }
 .turnpage1 {
     z-index: 2;
-    position: relative;
     float: left;
-    top: 80px;
+    position: relative;
+    margin-top: 80px;
     padding: 8px;
     color: white;
     background-color: rgba(0,0,0,.8);
@@ -825,13 +826,14 @@
 .turnpage3 {
     z-index: 2;
     position: relative;
-    top: 80px;
+    margin-top: 80px;
     padding: 8px;
     color: white;
     float: right;
     background-color: rgba(0,0,0,.8);
     padding-top: 10px;
     cursor: pointer;
+    display: block;
     opacity: 0;
     border-radius: 5px 0 0 5px;
     font: 11px Helvetica Neue, Helvetica, Arial, Microsoft Yahei, Hiragino Sans GB, Heiti SC, WenQuanYi Micro Hei, sans-serif;
@@ -845,8 +847,100 @@
     opacity: 1;
 }
 .index1{
-  display: none;
+    display: none;
 }
 .index2{
-  display: block;
+    display: block;
+}
+
+/*推广*/
+.generalize{
+    width: 1160px;
+    margin: 30px auto;
+}
+.iconbox{
+    width: 1160px;
+    height: 45px;
+    margin-bottom: 20px;
+}
+.icon{
+    width: 50px;
+    height: 50px;
+    float: left;
+}
+.name{
+    font-size: 24px;
+    line-height: 24px;
+    font-weight: 400;
+    margin: 13px 0 0 10px;
+    width: 840px;
+    float: left;
+}
+.statedata{
+    width: 260px;
+    height: 26px;
+    padding-top: 8px;
+    float: right;
+    border-radius: 3px;
+    background-color:rgba(177,177,177,.5);
+}
+.sa1{
+    font-size: 12px;
+    margin-left: 20px;
+    color:rgba(9,9,9,0.72);
+}
+.sa2{
+    font-size: 12px;
+    color:rgba(9,9,9,0.72);
+}
+.sa1:hover,
+.sa2:hover{
+    color:rgba(76,152,255,1.00);
+}
+
+.statedata span{
+    font-size: 8px;
+    margin:0 10px;
+    
+}
+
+/*推广视频*/
+.generalize-video{
+    width: 900px;
+    height: 168px;
+}
+.w720 .generalize-video{
+    width: 720px;
+    
+}
+.generalize-picbox{
+    width: 160px;
+    height: 100px;
+    border-radius: 5px;
+    background: url(../img/generalize-img.jpg) center top no-repeat;
+}
+.generalize-pic{
+    position: relative;
+    width: 160px;
+    height: 100px;
+    border-radius: 5px;
+    transition: background 1s;
+}
+.generalize-pic:hover{
+    background: rgba(0,0,0,.5);
+}
+.generalize-time{
+    padding: 80px 0 0 10px;
+    color: white;
+    font: 12px Helvetica Neue, Helvetica, Arial, Microsoft Yahei, Hiragino Sans GB, Heiti SC, WenQuanYi Micro Hei, sans-serif;
+}
+.generalize-p{
+    width: 160px;
+    padding-top: 10px;
+    line-height: 20px;
+    color: rgba(0,0,0,.8);
+    font: 12px Helvetica Neue, Helvetica, Arial, Microsoft Yahei, Hiragino Sans GB, Heiti SC, WenQuanYi Micro Hei, sans-serif;
+}
+.generalize-p:hover {
+    color:aquamarine;
 }

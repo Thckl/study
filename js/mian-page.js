@@ -7,12 +7,12 @@ $(window).resize(function() {
     
     /*当宽度小于1280px时修改浏览器宽度，导航标签间隔*/
     if(bodyw<1160){
-    $(document.body).addClass("w1000 l10 w520");
+    $(document.body).addClass("w1000 w520 l10");
     $(".show").addClass("hide");
 }else{ 
 
     /*大于1280px时移除样式，复原*/
-    $(document.body).removeClass("w1000 l10 520");
+    $(document.body).removeClass("w1000 w520 l10");
     $(".show").removeClass("hide");
 }
 });
@@ -265,3 +265,13 @@ $(function(){
    });
 
 });
+
+/*判断浏览器是否支持webp格式图片*/
+function checkWebp() {
+try{
+return(document.createElement('canvas').toDataURL('image/webp').indexOf('data:image/webp') == 0);
+}catch(err) {
+return false;
+}
+}
+console.log(checkWebp()); // true or false
