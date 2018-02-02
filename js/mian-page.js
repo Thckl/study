@@ -1,47 +1,47 @@
 // JavaScript Document
 /*开启浏览器时触发事件，判断浏览器窗口宽度并修改*/
-$(window).resize(function() { 
+$(window).resize(function () {
 
     /*获取浏览器当前宽度*/
-   var bodyw = $(document.body).outerWidth(true); 
-    
-    /*当宽度小于1280px时修改浏览器宽度，导航标签间隔*/
-    if(bodyw<1160){
-    $(document.body).addClass("w1000 w520 l10");
-    $(".show").addClass("hide");
-}else{ 
+    var bodyw = $(document.body).outerWidth(true);
 
-    /*大于1280px时移除样式，复原*/
-    $(document.body).removeClass("w1000 w520 l10");
-    $(".show").removeClass("hide");
-}
+    /*当宽度小于1280px时修改浏览器宽度，导航标签间隔*/
+    if (bodyw < 1160) {
+        $(document.body).addClass("w1000 w520 l10");
+        $(".show").addClass("hide");
+    } else {
+
+        /*大于1280px时移除样式，复原*/
+        $(document.body).removeClass("w1000 w520 l10");
+        $(".show").removeClass("hide");
+    }
 });
 /*浏览器宽度改变时触发事件，判断浏览器窗口大小并修改*/
-$(function() { 
+$(function () {
 
     /*获取浏览器当前宽度*/
-   var bodyw = $(document.body).outerWidth(true); 
-    
-    /*当宽度小于1280px时修改浏览器宽度，导航标签间隔*/
-    if(bodyw<1160){
-    $(document.body).addClass("w1000 l10 w520");
-    $(".show").addClass("hide");
-}else{ 
+    var bodyw = $(document.body).outerWidth(true);
 
-    /*大于1280px时移除样式，复原*/
-    $(document.body).removeClass("w1000 l10 w520");
-    $(".show").removeClass("hide");
-}
+    /*当宽度小于1280px时修改浏览器宽度，导航标签间隔*/
+    if (bodyw < 1160) {
+        $(document.body).addClass("w1000 l10 w520");
+        $(".show").addClass("hide");
+    } else {
+
+        /*大于1280px时移除样式，复原*/
+        $(document.body).removeClass("w1000 l10 w520");
+        $(".show").removeClass("hide");
+    }
 });
 
 /*顶部导航二级菜单动效*/
 var t;
 $(function () {
-    
+
     $(".nav-ul li").hover(
         function () {
             var is = $(this);
-            
+
             /*设定鼠标移入时animate效果*/
             t = setTimeout(function () {
 
@@ -53,32 +53,33 @@ $(function () {
             }, 1000);
         },
         function () {
-        
-        /*设定鼠标移出时清除效果*/
+
+            /*设定鼠标移出时清除效果*/
             clearTimeout(t);
-            
-        /*并添加移出动画*/
+
+            /*并添加移出动画*/
             $(this).children("ul").animate({
-                'top': 50 + 'px',
-                'opacity': 0
-            }, 200)
-            /*给hide添加时间防止与动画同时运行导致animate无演出效果*/
+                    'top': 50 + 'px',
+                    'opacity': 0
+                }, 200)
+                /*给hide添加时间防止与动画同时运行导致animate无演出效果*/
             $(this).children("ul").hide(1);
         }
     );
 });
 
 /*登录二级菜单图片滚动*/
-$(function(){
- var num = 0;
+$(function () {
+    var num = 0;
+
     function goLeft() {
-    
+
         /*根据图片数量设置滚动总长度*/
         if (num == -320) {
             num = 0;
         }
         num -= 1;
-        
+
         /*图片移动位置*/
         $(".scroll").css({
             'left': num
@@ -87,22 +88,22 @@ $(function(){
     }
     /*滚动速度*/
     var timer = setInterval(goLeft, 20);
-    
+
 });
 
 /*中部分区二级菜单动效*/
 $(function () {
-    
+
     $(".item-ul li").hover(
         function () {
             var is = $(this);
-            
+
             /*设定鼠标移入时显示*/
-                $(is).children("ul").show();
-       
+            $(is).children("ul").show();
+
         },
         function () {
-        
+
             /*鼠标移出时隐藏*/
             $(this).children("ul").hide();
         }
@@ -111,21 +112,21 @@ $(function () {
 
 /*首页轮播图*/
 window.onload = function () {
-    
+
     /*获取*/
     var Bi = document.getElementById("img-box");
     var Perv = document.getElementById("prev");
     var Next = document.getElementById("next");
-    
+
     /*定义事件名称为animate*/
     function animate(offset) {
-        
+
         /*定义BiLeft获取Bi的left值+offset*/
         var BiLeft = parseInt(Bi.style.left) + offset;
-        
+
         /*重新给定left属性的值为BiLeft*/
         Bi.style.left = BiLeft + 'px';
-        
+
         /*设定BiLeft限制以达到图片退回的目的*/
         if (BiLeft > -440) {
             Bi.style.left = -2200 + 'px';
@@ -135,7 +136,7 @@ window.onload = function () {
             Bi.style.left = -440 + 'px';
         }
     }
-    
+
     /*按钮点击切换图片事件*/
     Perv.onclick = function () {
         animate(440);
@@ -156,12 +157,12 @@ window.onload = function () {
     play();
 
     var Box = document.getElementById("scrolall");
-    
+
     /*通过清除计时器达到停止的轮播的目的*/
     function stop() {
         clearInterval(t);
     }
-    
+
     /*鼠标移入执行停止事件，移出执行播放事件*/
     Box.onmouseover = stop;
     Box.onmouseout = play;
@@ -180,7 +181,7 @@ window.onload = function () {
         }
         Bb[Index - 1].className = 'spanhover';
     }
-    
+
     /*跟随轮播标题切换事件*/
     function Txt1() {
 
@@ -191,10 +192,10 @@ window.onload = function () {
         }
         Cu[Index - 1].className = 'controlscroll-li1';
     }
-    
+
     /*左切换按钮点击事件*/
     Perv.onclick = function () {
-        
+
         /*当前按钮/文字层数减1达到切换效果*/
         Index -= 1;
         if (Index < 1) {
@@ -204,10 +205,10 @@ window.onload = function () {
         Txt1();
         animate(440);
     }
-    
+
     /*右切换按钮点击事件*/
     Next.onclick = function () {
-    /*当前按钮/文字层数加1达到切换效果*/
+        /*当前按钮/文字层数加1达到切换效果*/
         Index += 1;
         if (Index > 5) {
             Index = 1;
@@ -232,46 +233,72 @@ window.onload = function () {
 }
 
 /*按钮切换近期视频层*/
-$(function(){
-   $(".button1").click(function(){
-       $(".change1").removeClass("index2").addClass("index1");
-       $(".change2").removeClass("index1").addClass("index2");
-       
-   });
-   $(".button2").click(function(){
-       $(".change1").removeClass("index2").addClass("index1");
-       $(".change3").removeClass("index1").addClass("index2");
-       
-   });
-   $(".button3").click(function(){
-       $(".change2").removeClass("index2").addClass("index1");
-       $(".change3").removeClass("index1").addClass("index2");
-       
-   });
-   $(".button4").click(function(){
-       $(".change2").removeClass("index2").addClass("index1");
-       $(".change1").removeClass("index1").addClass("index2");
-       
-   });
-   $(".button5").click(function(){
-       $(".change3").removeClass("index2").addClass("index1");
-       $(".change1").removeClass("index1").addClass("index2");
-       
-   });
-   $(".button6").click(function(){
-       $(".change3").removeClass("index2").addClass("index1");
-       $(".change2").removeClass("index1").addClass("index2");
-       
-   });
+$(function () {
+    $(".button1").click(function () {
+        $(".change1").removeClass("index2").addClass("index1");
+        $(".change2").removeClass("index1").addClass("index2");
+
+    });
+    $(".button2").click(function () {
+        $(".change1").removeClass("index2").addClass("index1");
+        $(".change3").removeClass("index1").addClass("index2");
+
+    });
+    $(".button3").click(function () {
+        $(".change2").removeClass("index2").addClass("index1");
+        $(".change3").removeClass("index1").addClass("index2");
+
+    });
+    $(".button4").click(function () {
+        $(".change2").removeClass("index2").addClass("index1");
+        $(".change1").removeClass("index1").addClass("index2");
+
+    });
+    $(".button5").click(function () {
+        $(".change3").removeClass("index2").addClass("index1");
+        $(".change1").removeClass("index1").addClass("index2");
+
+    });
+    $(".button6").click(function () {
+        $(".change3").removeClass("index2").addClass("index1");
+        $(".change2").removeClass("index1").addClass("index2");
+
+    });
 
 });
 
 /*判断浏览器是否支持webp格式图片*/
 function checkWebp() {
-try{
-return(document.createElement('canvas').toDataURL('image/webp').indexOf('data:image/webp') == 0);
-}catch(err) {
-return false;
-}
+    try {
+        return (document.createElement('canvas').toDataURL('image/webp').indexOf('data:image/webp') == 0);
+    } catch (err) {
+        return false;
+    }
 }
 console.log(checkWebp()); // true or false
+
+/*进度条跟随鼠标移动*/
+$(function () {
+    var tm;
+    $(".progressbarbox").hover(function () {
+        tm = setTimeout(function () {
+            $(".generalize-progressbar").show();
+        }, 1000)
+    }, function () {
+        clearTimeout(tm);
+        $(".generalize-progressbar").hide();
+    });
+
+    $(".progressbarbox").mousemove(function (e) {
+        var Width = e.pageX - $(".progressbar").offset().left;
+        console.log(Width);
+        var pbWidth = Width;
+        if (pbWidth >= 154) {
+            pbWidth = 154;
+        } else if (pbWidth <= 0) {
+            pbWidth = 0;
+        }
+        $(".progressbar").css('width', pbWidth + 'px');
+    });
+
+});
