@@ -747,7 +747,7 @@
 }
 /*近期*/
 .recentvideo-box {
-    float: left;
+    float:left;
     width: 700px;
     height: 220px;
     margin-left: 30px;
@@ -757,7 +757,7 @@
     width: 520px;
 }
 .recentvideo-li {
-    position: fixed;
+    position: absolute;
     width: 160px;
     height: 100px;
     overflow: hidden;
