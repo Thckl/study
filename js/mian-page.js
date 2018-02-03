@@ -287,9 +287,6 @@ $(function () {
             $(".generalize-span").show().css("padding-top", 70 + 'px');
         }, 1000)
     }, function () {
-        $(".progressbar").mouseout(function(){
-                
-        });
         clearTimeout(tm);
         $(".generalize-progressbar").hide();
         $(".generalize-scrollbackground").hide();
@@ -300,9 +297,9 @@ $(function () {
     /*进度条跟随鼠标移动*/
     $(".progressbarbox").mousemove(function (e) {
         var Width = e.pageX - $(".progressbar").offset().left;
-        console.log(Width);
+        // console.log(Width);
         var pbWidth = Width;
-        if (pbWidth >= 154) {
+        if (pbWidth >= 150) {
             pbWidth = 150;
         } else if (pbWidth <= 0) {
             pbWidth = 0;
@@ -310,24 +307,27 @@ $(function () {
         $(".progressbar").css('width', pbWidth + 'px');
         var x=0;//背景定位x轴坐标
         var y=0;//背景定位y轴坐标
-        var zl=1.5;
         var a=0;
         var wh=0;
+        var w ;
         if(pbWidth>=1.5){
-            wh+=160;
+            w = Math.floor(pbWidth/1.5);
+            wh=160*w;
             if(wh>=1600){
-               a=wh%1600;
-               y=a*90;
-               x=wh-(a*1600);
+               a=Math.floor(wh/1600);
+               y=-a*90;
+              
+               x=-(wh-(a*1600));
             }else{
-              x+=160;
-            }   
+                x=-wh;
+                y=0;
+            }
         }
-        document.getElementById("gsb").style.backgroundPositionX=x+'px';
-        document.getElementById("gsb").style.backgroundPositionY=y+'px';
+        else{
+              x=-160;
+            }  
+        $(".generalize-scrollbackground").css("background-position",x+'px '+y+'px');
         console.log(x);
-        console.log(y);
-        console.log(wh);
          
         });
         
