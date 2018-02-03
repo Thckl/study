@@ -357,6 +357,11 @@ $(function () {
         console.log(MaLeft);
         console.log(MaTop);   
         console.log(ToHeigth);
+        }).mouseout(function(){
+            LeWidth = 1.5;
+            MaLeft = -160;
+            MaTop = 15;
+            ToHeigth = 0;
         });
         
     });
