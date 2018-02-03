@@ -949,6 +949,7 @@
     color: rgba(0,0,0,.8);
     font: 12px Helvetica Neue, Helvetica, Arial, Microsoft Yahei, Hiragino Sans GB, Heiti SC, WenQuanYi Micro Hei, sans-serif;
 }
+
 .generalize-p:hover {
     color:aquamarine;
 }
@@ -971,5 +972,5 @@
     width: 160px;
     height: 90px;
     display: none;
-    overflow: ;
+    background: url(../img/generalizebackground-positionimg.jpg) 0 0;
 }

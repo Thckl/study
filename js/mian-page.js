@@ -277,7 +277,7 @@ function checkWebp() {
 }
 console.log(checkWebp()); // true or false
 
-
+    
 $(function () {
     var tm;
     $(".progressbarbox").hover(function () {
@@ -287,16 +287,16 @@ $(function () {
             $(".generalize-span").show().css("padding-top", 70 + 'px');
         }, 1000)
     }, function () {
+        $(".progressbar").mouseout(function(){
+                
+        });
         clearTimeout(tm);
         $(".generalize-progressbar").hide();
         $(".generalize-scrollbackground").hide();
         $(".generalize-span").hide().css("padding-top", 80 + 'px');
     });
     
-    var LeWidth = 1.5;
-    var MaLeft = -160;
-    var MaTop = 15;
-    var ToHeigth = 0;
+    
     /*进度条跟随鼠标移动*/
     $(".progressbarbox").mousemove(function (e) {
         var Width = e.pageX - $(".progressbar").offset().left;
@@ -307,61 +307,28 @@ $(function () {
         } else if (pbWidth <= 0) {
             pbWidth = 0;
         }
-        console.log(pbWidth);
         $(".progressbar").css('width', pbWidth + 'px');
-        if(pbWidth >= LeWidth){
-            LeWidth = LeWidth + 1.5;
-            MaLeft = MaLeft - 160;
-            $(".generalize-img").css('margin-left', MaLeft + 'px');
-        }  
-        if(pbWidth <= LeWidth){
-            LeWidth = LeWidth - 1.5;
-            MaLeft = MaLeft + 160;
-            $(".generalize-img").css('margin-left', MaLeft + 'px');
-        } 
-        if(pbWidth >= MaTop){
-            MaTop = MaTop + 15;
-            ToHeigth = ToHeigth - 90;
-            $(".generalize-img").css('margin-top', ToHeigth + 'px');
+        var x=0;//背景定位x轴坐标
+        var y=0;//背景定位y轴坐标
+        var zl=1.5;
+        var a=0;
+        var wh=0;
+        if(pbWidth>=1.5){
+            wh+=160;
+            if(wh>=1600){
+               a=wh%1600;
+               y=a*90;
+               x=wh-(a*1600);
+            }else{
+              x+=160;
+            }   
         }
-        if(pbWidth <= MaTop){
-            MaTop = MaTop - 15;
-            ToHeigth = ToHeigth + 90;
-            $(".generalize-img").css('margin-top', ToHeigth + 'px');
-        }
-        if(MaTop > 140){
-            MaTop = 15;
-        }
-        if(MaTop <= 0){
-            MaTop = 15;
-        }
-        if(ToHeigth < -900){
-            ToHeigth = 0;
-        }
-        if(ToHeigth > 0){
-            ToHeigth = -900;
-        }
-        if(LeWidth > 140 ){
-            LeWidth = 1.5;
-        }
-        if(LeWidth <= 0){
-            LeWidth = 1.5;
-        }
-        if(MaLeft < -1440){
-            MaLeft = -160;
-        }
-        if(MaLeft > -160){
-            MaLeft = -1440;
-        }
-        console.log(LeWidth);   
-        console.log(MaLeft);
-        console.log(MaTop);   
-        console.log(ToHeigth);
-        }).mouseout(function(){
-            LeWidth = 1.5;
-            MaLeft = -160;
-            MaTop = 15;
-            ToHeigth = 0;
+        document.getElementById("gsb").style.backgroundPositionX=x+'px';
+        document.getElementById("gsb").style.backgroundPositionY=y+'px';
+        console.log(x);
+        console.log(y);
+        console.log(wh);
+         
         });
         
     });
