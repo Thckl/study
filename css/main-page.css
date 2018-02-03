@@ -858,6 +858,9 @@
     width: 1160px;
     margin: 30px auto;
 }
+.w1000 .generalize{
+    width: 1000px;
+}
 .iconbox{
     width: 1160px;
     height: 45px;
@@ -876,11 +879,14 @@
     width: 840px;
     float: left;
 }
+.w670 .name{
+    width: 670px;
+}
 .statedata{
     width: 260px;
     height: 26px;
     padding-top: 8px;
-    float: right;
+    float: left;
     border-radius: 3px;
     background-color:rgba(177,177,177,.5);
 }
@@ -929,8 +935,10 @@
 .generalize-pic:hover{
     background: rgba(0,0,0,.5);
 }
-.generalize-time{
-    padding: 70px 0 0 10px;
+.generalize-span{
+    position: fixed;
+    padding:80px 0 0 10px;
+    display: none;
     color: white;
     font: 12px Helvetica Neue, Helvetica, Arial, Microsoft Yahei, Hiragino Sans GB, Heiti SC, WenQuanYi Micro Hei, sans-serif;
 }
@@ -958,4 +966,10 @@
     width: 0;
     height: 2px;
     background-color: white;
+}
+.generalize-scrollbackground{
+    width: 160px;
+    height: 90px;
+    display: none;
+    overflow: ;
 }

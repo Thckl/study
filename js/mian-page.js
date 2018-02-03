@@ -7,12 +7,12 @@ $(window).resize(function () {
 
     /*当宽度小于1280px时修改浏览器宽度，导航标签间隔*/
     if (bodyw < 1160) {
-        $(document.body).addClass("w1000 w520 l10");
+        $(document.body).addClass("w1000 w520 l10 w670");
         $(".show").addClass("hide");
     } else {
 
         /*大于1280px时移除样式，复原*/
-        $(document.body).removeClass("w1000 w520 l10");
+        $(document.body).removeClass("w1000 w520 l10 w670");
         $(".show").removeClass("hide");
     }
 });
@@ -24,12 +24,12 @@ $(function () {
 
     /*当宽度小于1280px时修改浏览器宽度，导航标签间隔*/
     if (bodyw < 1160) {
-        $(document.body).addClass("w1000 l10 w520");
+        $(document.body).addClass("w1000 l10 w520 w670");
         $(".show").addClass("hide");
     } else {
 
         /*大于1280px时移除样式，复原*/
-        $(document.body).removeClass("w1000 l10 w520");
+        $(document.body).removeClass("w1000 l10 w520 w670");
         $(".show").removeClass("hide");
     }
 });
@@ -277,28 +277,87 @@ function checkWebp() {
 }
 console.log(checkWebp()); // true or false
 
-/*进度条跟随鼠标移动*/
+
 $(function () {
     var tm;
     $(".progressbarbox").hover(function () {
         tm = setTimeout(function () {
             $(".generalize-progressbar").show();
+            $(".generalize-scrollbackground").show();
+            $(".generalize-span").show().css("padding-top", 70 + 'px');
         }, 1000)
     }, function () {
         clearTimeout(tm);
         $(".generalize-progressbar").hide();
+        $(".generalize-scrollbackground").hide();
+        $(".generalize-span").hide().css("padding-top", 80 + 'px');
     });
-
+    
+    var LeWidth = 1.5;
+    var MaLeft = -160;
+    var MaTop = 15;
+    var ToHeigth = 0;
+    /*进度条跟随鼠标移动*/
     $(".progressbarbox").mousemove(function (e) {
         var Width = e.pageX - $(".progressbar").offset().left;
         console.log(Width);
         var pbWidth = Width;
         if (pbWidth >= 154) {
-            pbWidth = 154;
+            pbWidth = 150;
         } else if (pbWidth <= 0) {
             pbWidth = 0;
         }
+        console.log(pbWidth);
         $(".progressbar").css('width', pbWidth + 'px');
+        if(pbWidth >= LeWidth){
+            LeWidth = LeWidth + 1.5;
+            MaLeft = MaLeft - 160;
+            $(".generalize-img").css('margin-left', MaLeft + 'px');
+        }  
+        if(pbWidth <= LeWidth){
+            LeWidth = LeWidth - 1.5;
+            MaLeft = MaLeft + 160;
+            $(".generalize-img").css('margin-left', MaLeft + 'px');
+        } 
+        if(pbWidth >= MaTop){
+            MaTop = MaTop + 15;
+            ToHeigth = ToHeigth - 90;
+            $(".generalize-img").css('margin-top', ToHeigth + 'px');
+        }
+        if(pbWidth <= MaTop){
+            MaTop = MaTop - 15;
+            ToHeigth = ToHeigth + 90;
+            $(".generalize-img").css('margin-top', ToHeigth + 'px');
+        }
+        if(MaTop > 140){
+            MaTop = 15;
+        }
+        if(MaTop <= 0){
+            MaTop = 15;
+        }
+        if(ToHeigth < -900){
+            ToHeigth = 0;
+        }
+        if(ToHeigth > 0){
+            ToHeigth = -900;
+        }
+        if(LeWidth > 140 ){
+            LeWidth = 1.5;
+        }
+        if(LeWidth <= 0){
+            LeWidth = 1.5;
+        }
+        if(MaLeft < -1440){
+            MaLeft = -160;
+        }
+        if(MaLeft > -160){
+            MaLeft = -1440;
+        }
+        console.log(LeWidth);   
+        console.log(MaLeft);
+        console.log(MaTop);   
+        console.log(ToHeigth);
+        });
+        
     });
 
-});
