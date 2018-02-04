@@ -305,16 +305,38 @@ $(function () {
             pbWidth = 0;
         }
         $(".progressbar").css('width', pbWidth + 'px');
+        
+        /*背景定位跟随鼠标切换*/
         var x=0;//背景定位x轴坐标
         var y=0;//背景定位y轴坐标
         var a=0;
         var wh=0;
         var w ;
-        if(pbWidth>=1.5){
-            w = Math.floor(pbWidth/1.5);
+        /*获取视频长度(只有视频没有后台给出的视频长度时使用)     
+          var videolength=$("videoId").duration;    
+           var vt1=Math.floor(videolength/60);
+           var vt2=Math.floor(videolength%60);
+           var vt3=vt1 + ':' + vt2;
+        */
+        var spval = $(".generalize-span").text();
+        console.log(spval);
+        var str = spval; //获取span的值为视频长度  \\ 视频长度var str = vt3;(只有视频没有后台给出的视频长度时使用)
+        var ret = str.split(".")[0]; //获取分钟数
+        var ree = str.split(".")[1]; //获取秒数
+        var piRet = parseInt(ret);
+        var piRee = parseInt(ree);
+        var c = (piRet*60 + piRee)/9 ; //上限显示15分钟以内的内容 9秒一张图
+        var n = Math.round(150/c);  //得出图片切换间隔
+        if(n<1.5){
+           n=1.5;
+        }
+        console.log(n);
+        if(pbWidth>=n){
+            w = Math.floor(pbWidth/n);
             wh=160*w;
             if(wh>=1600){
                a=Math.floor(wh/1600);
+               //console.log(a);
                y=-a*90;
               
                x=-(wh-(a*1600));
@@ -327,7 +349,7 @@ $(function () {
               x=-160;
             }  
         $(".generalize-scrollbackground").css("background-position",x+'px '+y+'px');
-        console.log(x);
+        //console.log(x);
          
         });
         
