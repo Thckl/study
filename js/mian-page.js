@@ -318,13 +318,13 @@ $(function () {
                    var vt2=Math.floor(videolength%60);
                    var vt3=vt1 + ':' + vt2;
                 */
-                var spval = $(".generalize-span").text();
+                var spval = $(this).find(".generalize-span").text();
                 var str = spval; //获取span的值为视频长度  \\ 视频长度var str = vt3;(只有视频没有后台给出的视频长度时使用)
                 var ret = str.split(".")[0]; //获取分钟数
                 var ree = str.split(".")[1]; //获取秒数
                 var piRet = parseInt(ret);
                 var piRee = parseInt(ree);
-                var c = (piRet * 60 + piRee) / 18;
+                var c = (piRet * 60 + piRee) / 9;
                 var n = Math.round(150 / c); //得出图片切换间隔
                 if (n < 1.5) {
                     n = 1.5;
