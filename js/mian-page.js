@@ -277,81 +277,76 @@ function checkWebp() {
 }
 console.log(checkWebp()); // true or false
 
-    
+
 $(function () {
     var tm;
-    $(".progressbarbox").hover(function () {
+    $(".generalize-picbox").hover(function () {
+        var GP=$(this);
         tm = setTimeout(function () {
-            $(".generalize-progressbar").show();
-            $(".generalize-scrollbackground").show();
-            $(".generalize-span").show().css("padding-top", 70 + 'px');
+            $(GP).find(".generalize-progressbar").show();
+            $(GP).find(".generalize-scrollbackground").show();
+            $(GP).find(".generalize-span").show().css("padding-top", 70 + 'px');
         }, 1000)
     }, function () {
         clearTimeout(tm);
-        $(".generalize-progressbar").hide();
-        $(".generalize-scrollbackground").hide();
-        $(".generalize-span").hide().css("padding-top", 80 + 'px');
+        $(this).find(".generalize-progressbar").hide();
+        $(this).find(".generalize-scrollbackground").hide();
+        $(this).find(".generalize-span").hide().css("padding-top", 80 + 'px');
     });
-    
-    
-    /*进度条跟随鼠标移动*/
-    $(".progressbarbox").mousemove(function (e) {
-        var Width = e.pageX - $(".progressbar").offset().left;
-        // console.log(Width);
-        var pbWidth = Width;
-        if (pbWidth >= 150) {
-            pbWidth = 150;
-        } else if (pbWidth <= 0) {
-            pbWidth = 0;
-        }
-        $(".progressbar").css('width', pbWidth + 'px');
-        
-        /*背景定位跟随鼠标切换*/
-        var x=0;//背景定位x轴坐标
-        var y=0;//背景定位y轴坐标
-        var a=0;
-        var wh=0;
-        var w ;
-        /*获取视频长度(只有视频没有后台给出的视频长度时使用)     
-          var videolength=$("videoId").duration;    
-           var vt1=Math.floor(videolength/60);
-           var vt2=Math.floor(videolength%60);
-           var vt3=vt1 + ':' + vt2;
-        */
-        var spval = $(".generalize-span").text();
-        console.log(spval);
-        var str = spval; //获取span的值为视频长度  \\ 视频长度var str = vt3;(只有视频没有后台给出的视频长度时使用)
-        var ret = str.split(".")[0]; //获取分钟数
-        var ree = str.split(".")[1]; //获取秒数
-        var piRet = parseInt(ret);
-        var piRee = parseInt(ree);
-        var c = (piRet*60 + piRee)/9 ; //上限显示15分钟以内的内容 9秒一张图
-        var n = Math.round(150/c);  //得出图片切换间隔
-        if(n<1.5){
-           n=1.5;
-        }
-        console.log(n);
-        if(pbWidth>=n){
-            w = Math.floor(pbWidth/n);
-            wh=160*w;
-            if(wh>=1600){
-               a=Math.floor(wh/1600);
-               //console.log(a);
-               y=-a*90;
-              
-               x=-(wh-(a*1600));
-            }else{
-                x=-wh;
-                y=0;
-            }
-        }
-        else{
-              x=-160;
-            }  
-        $(".generalize-scrollbackground").css("background-position",x+'px '+y+'px');
-        //console.log(x);
-         
-        });
-        
-    });
+            /*进度条跟随鼠标移动*/
+            $(".generalize-picbox").mousemove(function (e) {
+                var Width = e.pageX - $(this).find(".progressbar").offset().left;
+                var pbWidth = Width;
+                
+                if (pbWidth >= 150) {
+                    pbWidth = 150;
+                } else if (pbWidth <= 0) {
+                    pbWidth = 0;
+                }
+                //console.log(pbWidth);
+                $(this).find(".progressbar").css('width', pbWidth + 'px');
 
+                /*背景定位跟随鼠标切换*/
+                var x = 0; //背景定位x轴坐标
+                var y = 0; //背景定位y轴坐标
+                var a = 0;
+                var wh = 0;
+                var w;
+                /*获取视频长度(只有视频没有后台给出的视频长度时使用)     
+                  var videolength=$("videoId").duration;    
+                   var vt1=Math.floor(videolength/60);
+                   var vt2=Math.floor(videolength%60);
+                   var vt3=vt1 + ':' + vt2;
+                */
+                var spval = $(".generalize-span").text();
+                var str = spval; //获取span的值为视频长度  \\ 视频长度var str = vt3;(只有视频没有后台给出的视频长度时使用)
+                var ret = str.split(".")[0]; //获取分钟数
+                var ree = str.split(".")[1]; //获取秒数
+                var piRet = parseInt(ret);
+                var piRee = parseInt(ree);
+                var c = (piRet * 60 + piRee) / 18;
+                var n = Math.round(150 / c); //得出图片切换间隔
+                if (n < 1.5) {
+                    n = 1.5;
+                }
+                if (pbWidth >= n) {
+                    w = Math.floor(pbWidth / n);
+                    wh = 160 * w;
+                    if (wh >= 1600) {
+                        a = Math.floor(wh / 1600);
+                        y = -a * 90;
+
+                        x = -(wh - (a * 1600));
+                    } else {
+                        x = -wh;
+                        y = 0;
+                    }
+                } else {
+                    x = -160;
+                }
+                $(this).find(".generalize-scrollbackground").css("background-position", x + 'px ' + y + 'px');
+
+            });
+
+
+});

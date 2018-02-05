@@ -876,11 +876,11 @@
     line-height: 24px;
     font-weight: 400;
     margin: 13px 0 0 10px;
-    width: 840px;
+    width: 830px;
     float: left;
 }
 .w670 .name{
-    width: 670px;
+    width: 660px;
 }
 .statedata{
     width: 260px;
@@ -912,7 +912,9 @@
 
 /*推广视频*/
 .generalize-video{
-    width: 900px;
+    float:left;
+    position: relative;
+    width: 1160px;
     height: 168px;
 }
 .w720 .generalize-video{
@@ -920,17 +922,19 @@
     
 }
 .generalize-picbox{
+    float: left;
+    margin-left: 15px;
     width: 160px;
     height: 100px;
     border-radius: 5px;
-    background: url(../img/generalize-img.jpg) center top no-repeat;
+    
 }
 .generalize-pic{
-    position: relative;
     width: 160px;
     height: 100px;
     border-radius: 5px;
     transition: background 1s;
+    overflow: hidden;
 }
 .generalize-pic:hover{
     background: rgba(0,0,0,.5);
@@ -942,10 +946,14 @@
     color: white;
     font: 12px Helvetica Neue, Helvetica, Arial, Microsoft Yahei, Hiragino Sans GB, Heiti SC, WenQuanYi Micro Hei, sans-serif;
 }
-.generalize-p{
+.generalize-p{ 
+    float: left;
+    position: absolute;
     width: 160px;
+    height: 32px;
     padding-top: 10px;
     line-height: 20px;
+    overflow: hidden;
     color: rgba(0,0,0,.8);
     font: 12px Helvetica Neue, Helvetica, Arial, Microsoft Yahei, Hiragino Sans GB, Heiti SC, WenQuanYi Micro Hei, sans-serif;
 }
@@ -964,7 +972,6 @@
     display: none;
 }
 .progressbar{
-    width: 0;
     height: 2px;
     background-color: white;
 }
@@ -972,5 +979,12 @@
     width: 160px;
     height: 90px;
     display: none;
-    background: url(../img/generalizebackground-positionimg.jpg) 0 0 no-repeat;
+}
+.generalize-video-right{
+    position: relative;
+    float: left;
+    margin-left: 15px;
+}
+.generalize-video-right img{
+    border-radius: 5px;
 }
