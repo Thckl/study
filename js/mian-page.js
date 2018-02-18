@@ -7,12 +7,12 @@ $(window).resize(function () {
 
     /*当宽度小于1280px时修改浏览器宽度，导航标签间隔*/
     if (bodyw < 1160) {
-        $(document.body).addClass("w1000 w520 l10 w670");
+        $(document.body).addClass("w1000 w520 l10 w670 w960 w730 l30");
         $(".show").addClass("hide");
     } else {
 
         /*大于1280px时移除样式，复原*/
-        $(document.body).removeClass("w1000 w520 l10 w670");
+        $(document.body).removeClass("w1000 w520 l10 w670 w960 w730 l30");
         $(".show").removeClass("hide");
     }
 });
@@ -24,12 +24,12 @@ $(function () {
 
     /*当宽度小于1280px时修改浏览器宽度，导航标签间隔*/
     if (bodyw < 1160) {
-        $(document.body).addClass("w1000 l10 w520 w670");
+        $(document.body).addClass("w1000 l10 w520 w670 w960 w730 l30");
         $(".show").addClass("hide");
     } else {
 
         /*大于1280px时移除样式，复原*/
-        $(document.body).removeClass("w1000 l10 w520 w670");
+        $(document.body).removeClass("w1000 l10 w520 w670 w960 w730 l30");
         $(".show").removeClass("hide");
     }
 });
@@ -281,7 +281,7 @@ console.log(checkWebp()); // true or false
 $(function () {
     var tm;
     $(".generalize-picbox").hover(function () {
-        var GP=$(this);
+        var GP = $(this);
         tm = setTimeout(function () {
             $(GP).find(".generalize-progressbar").show();
             $(GP).find(".generalize-scrollbackground").show();
@@ -293,60 +293,57 @@ $(function () {
         $(this).find(".generalize-scrollbackground").hide();
         $(this).find(".generalize-span").hide().css("padding-top", 80 + 'px');
     });
-            /*进度条跟随鼠标移动*/
-            $(".generalize-picbox").mousemove(function (e) {
-                var Width = e.pageX - $(this).find(".progressbar").offset().left;
-                var pbWidth = Width;
-                
-                if (pbWidth >= 150) {
-                    pbWidth = 150;
-                } else if (pbWidth <= 0) {
-                    pbWidth = 0;
-                }
-                //console.log(pbWidth);
-                $(this).find(".progressbar").css('width', pbWidth + 'px');
+    /*进度条跟随鼠标移动*/
+    $(".generalize-picbox").mousemove(function (e) {
+        var Width = e.pageX - $(this).find(".progressbar").offset().left;
+        var pbWidth = Width;
 
-                /*背景定位跟随鼠标切换*/
-                var x = 0; //背景定位x轴坐标
-                var y = 0; //背景定位y轴坐标
-                var a = 0;
-                var wh = 0;
-                var w;
-                /*获取视频长度(只有视频没有后台给出的视频长度时使用)     
-                  var videolength=$("videoId").duration;    
-                   var vt1=Math.floor(videolength/60);
-                   var vt2=Math.floor(videolength%60);
-                   var vt3=vt1 + ':' + vt2;
-                */
-                var spval = $(this).find(".generalize-span").text();
-                var str = spval; //获取span的值为视频长度  \\ 视频长度var str = vt3;(只有视频没有后台给出的视频长度时使用)
-                var ret = str.split(".")[0]; //获取分钟数
-                var ree = str.split(".")[1]; //获取秒数
-                var piRet = parseInt(ret);
-                var piRee = parseInt(ree);
-                var c = (piRet * 60 + piRee) / 9;
-                var n = Math.round(150 / c); //得出图片切换间隔
-                if (n < 1.5) {
-                    n = 1.5;
-                }
-                if (pbWidth >= n) {
-                    w = Math.floor(pbWidth / n);
-                    wh = 160 * w;
-                    if (wh >= 1600) {
-                        a = Math.floor(wh / 1600);
-                        y = -a * 90;
+        if (pbWidth >= 150) {
+            pbWidth = 150;
+        } else if (pbWidth <= 0) {
+            pbWidth = 0;
+        }
+        //console.log(pbWidth);
+        $(this).find(".progressbar").css('width', pbWidth + 'px');
 
-                        x = -(wh - (a * 1600));
-                    } else {
-                        x = -wh;
-                        y = 0;
-                    }
-                } else {
-                    x = -160;
-                }
-                $(this).find(".generalize-scrollbackground").css("background-position", x + 'px ' + y + 'px');
-
-            });
-
-
+        /*背景定位跟随鼠标切换*/
+        var x = 0; //背景定位x轴坐标
+        var y = 0; //背景定位y轴坐标
+        var a = 0;
+        var wh = 0;
+        var w;
+        /*获取视频长度(只有视频没有后台给出的视频长度时使用)     
+          var videolength=$("videoId").duration;    
+           var vt1=Math.floor(videolength/60);
+           var vt2=Math.floor(videolength%60);
+           var vt3=vt1 + ':' + vt2; */
+        var spval = $(this).find(".generalize-span").text();
+        var str = spval; //获取span的值为视频长度  \\ 视频长度var str = vt3;(只有视频没有后台给出的视频长度时使用)
+        var ret = str.split(".")[0]; //获取分钟数
+        var ree = str.split(".")[1]; //获取秒数
+        var piRet = parseInt(ret);
+        var piRee = parseInt(ree);
+        var c = (piRet * 60 + piRee) / 9;
+        var n = Math.round(150 / c); //得出图片切换间隔
+        if (n < 1.5) {
+            n = 1.5;
+        }
+        if (pbWidth >= n) {
+            w = Math.floor(pbWidth / n);
+            //获取x坐标
+            wh = 160 * w;
+            //判断当x坐标大于1600时换行
+            if (wh >= 1600) {
+                a = Math.floor(wh / 1600);
+                y = -a * 90;
+                x = -(wh - (a * 1600));
+            } else {
+                x = -wh;
+                y = 0;
+            }
+        } else {
+            x = -160;
+        }
+        $(this).find(".generalize-scrollbackground").css("background-position", x + 'px ' + y + 'px');
+    });
 });

@@ -27,7 +27,8 @@
 .nav {
     width: 100%;
     height: 40px;
-    background-color: rgba(255,255,255,0.5)
+    background-color: rgba(255,255,255,0.5);
+    box-shadow:  0px 2px 2px rgba(0,0,0,.1);
 }
 /*顶导航左侧*/
 .nav-ul {
@@ -800,6 +801,7 @@
 .recentvideo-li:hover .recentvideo-div {
     margin-top: -104px;
     padding-top: 10px;
+    border-radius: 5px;
     background: rgba(0,0,0,.8);
 }
 .recentvideo-li:hover .recentvideo-span2 {
@@ -855,20 +857,18 @@
 
 /*推广*/
 .generalize{
-    width: 1160px;
+    width: 1200px;
     margin: 30px auto;
 }
 .w1000 .generalize{
     width: 1000px;
 }
 .iconbox{
-    width: 1160px;
+    width: 1200px;
     height: 45px;
     margin-bottom: 20px;
 }
 .icon{
-    width: 50px;
-    height: 50px;
     float: left;
 }
 .name{
@@ -876,11 +876,11 @@
     line-height: 24px;
     font-weight: 400;
     margin: 13px 0 0 10px;
-    width: 830px;
+    width: 850px;
     float: left;
 }
 .w670 .name{
-    width: 660px;
+    width: 670px;
 }
 .statedata{
     width: 260px;
@@ -914,16 +914,17 @@
 .generalize-video{
     float:left;
     position: relative;
-    width: 1160px;
+    width: 1200px;
     height: 168px;
+    margin-bottom: 10px;
 }
 .w720 .generalize-video{
-    width: 720px;
+    width: 960px;
     
 }
 .generalize-picbox{
     float: left;
-    margin-left: 15px;
+    margin: 0 10px;
     width: 160px;
     height: 100px;
     border-radius: 5px;
@@ -987,4 +988,203 @@
 }
 .generalize-video-right img{
     border-radius: 5px;
+}
+
+/*广告*/
+.ad {
+    width: 1164px;
+    height: 96px;
+    border-radius: 5px;
+}
+.w960 .ad{
+    width: 986px;
+    height: 81px;
+}
+
+/*正在直播*/
+.onLive-broadcast{
+    width: 900px;
+    height: 100%;
+    margin-top: 20px;
+}
+.broadcast-people{
+    float: left;
+    margin-left: 20px;
+    padding-top: 16px;
+    font: 12px Helvetica Neue, Helvetica, Arial, Microsoft Yahei, Hiragino Sans GB, Heiti SC, WenQuanYi Micro Hei, sans-serif;
+    color: rgba(0,0,0,.3);
+}
+.name2{
+    font-size: 24px;
+    line-height: 24px;
+    font-weight: 400;
+    margin: 13px 0 0 10px;
+    float: left;
+}
+.people{
+    font: 12px Helvetica Neue, Helvetica, Arial, Microsoft Yahei, Hiragino Sans GB, Heiti SC, WenQuanYi Micro Hei, sans-serif;
+    color: aquamarine;
+}
+.broadcast-people2{
+    float: left;
+    margin-left: 40px;
+}
+.broadcast-people2 a{ 
+    margin-top: 16px;
+    float: left;
+    font: 12px Helvetica Neue, Helvetica, Arial, Microsoft Yahei, Hiragino Sans GB, Heiti SC, WenQuanYi Micro Hei, sans-serif;
+    color: rgba(0,0,0,.3);
+}
+.broadcast-people2 img{
+    float: left;
+    padding-top: 14px;
+}
+.broadcast-people2 a:hover{
+    color: aquamarine;
+}
+.new-dynamic{
+    float: left;
+    width: 120px;
+    height: 23px;
+    margin: 10px 0 0 210px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 1px solid rgba(0,0,0,.2);
+    font: 12px Helvetica Neue, Helvetica, Arial, Microsoft Yahei, Hiragino Sans GB, Heiti SC, WenQuanYi Micro Hei, sans-serif;
+    color: rgba(0,0,0,.8);
+    transition: background-color .6s;
+}
+.l30 .new-dynamic{
+    margin-left: 30px;
+}
+.dynamic-img{
+    float: left;
+    margin: 5px 6px 0 8px;
+    transition: all .6s;
+}
+.dynamic-number{
+    float: left;
+    padding-top: 5px;
+}
+.dynamic-span{
+    float: left;
+    padding-top: 3px;
+}
+.new-dynamic:hover{
+    background-color: rgba(0,0,0,.2);
+}
+.new-dynamic:hover .dynamic-img{
+    transform: rotate(-360deg);
+}
+.new-dynamic2{
+    float: left;
+    width: 48px;
+    height: 17px;
+    margin: 10px 0 0 10px;
+    padding: 3px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 1px solid rgba(0,0,0,.2);
+    font: 12px Helvetica Neue, Helvetica, Arial, Microsoft Yahei, Hiragino Sans GB, Heiti SC, WenQuanYi Micro Hei, sans-serif;
+    color: rgba(0,0,0,.8);
+    transition: background-color .6s;
+}
+.dynamic2-span1{
+    float: left;
+    margin-left: 6px;
+    transition: all .3s;
+}
+.dynamic2-span2{
+    float: left;
+    margin: 2px 0 0 4px;
+    transition: all .3s;
+}
+.new-dynamic2:hover{
+    background-color: rgba(0,0,0,.2);
+}
+.new-dynamic2:hover .dynamic2-span1{
+    margin-left: 4px;
+}
+.new-dynamic2:hover .dynamic2-span2{
+    margin-left: 8px;
+}
+
+/*直播小窗口*/
+.dynamic-video-ul{
+    float: left;
+    width: 900px;
+    height: 336px;
+    margin-top: 60px;
+    position: absolute;
+}
+.w730 .dynamic-video-ul{
+    width: 730px;
+}
+.dynamic-video-ul li{
+    float: left;
+    width: 160px;
+    height: 100px;
+    margin: 0 10px;
+    font: 12px Helvetica Neue, Helvetica, Arial, Microsoft Yahei, Hiragino Sans GB, Heiti SC, WenQuanYi Micro Hei, sans-serif;
+    border-radius: 4px;
+    display: block;
+}
+.dynamic-videobox-hover{
+    float: left;
+    position: absolute;
+    width: 160px;
+    height: 100px;
+    margin-top: -100px;
+    background-size: 160px 100px;
+    border-radius: 4px;
+    opacity: 0;
+    transition: all 1s;
+}
+.dynamic-videobox {
+    width: 100%;
+    height: 18px;
+    margin-top: 82px;
+    border-radius: 0 0 3px 3px;
+    color: white;
+    background: -moz-linear-gradient(top, rgba(0,0,0,.1), rgba(0,0,0,.5));
+    background: -webkit-linear-gradient(top, rgba(0,0,0,.1), rgba(0,0,0,.5));
+    background: -o-linear-gradient(top, rgba(0,0,0,.1), rgba(0,0,0,.5));
+}
+.dynamic-ul-span1{
+    float: left;
+    margin-left: 6px;
+    
+}
+.dynamic-ul-span2{
+    float: right;
+    margin-right: 6px;
+}
+
+.dynamic-titlebox{
+    margin-top: 10px;
+}
+
+.dynamic-ul-span3{
+    float: left;
+    width: 100%;
+    height: 12px;
+    color: rgba(0,0,0,0.80);
+}
+.dynamic-ul-span4{
+    float: left;
+    margin-top: 5px;
+    width: 100%;
+    height: 12px;
+    color: rgba(0,0,0,0.38);
+    transition: all .4s;
+}
+.dynamic-video-ul li:hover .dynamic-ul-span3{
+    color: aquamarine;
+}
+.dynamic-video-ul li:hover .dynamic-ul-span4{
+    margin-top: 20px;
+    opacity: 0;
+}
+.dynamic-video-li:hover .dynamic-videobox-hover{
+    opacity: 1;
 }
