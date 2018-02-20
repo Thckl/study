@@ -347,3 +347,95 @@ $(function () {
         $(this).find(".generalize-scrollbackground").css("background-position", x + 'px ' + y + 'px');
     });
 });
+
+/*直播选项卡切换*/
+$(function(){
+         /*顶部选项卡切换*/
+        $(".item1").click(function(){
+             $(".item2").removeClass("onclick");
+             $(".item3").removeClass("onclick");
+             $(this).addClass("onclick");
+             $(".changebox-ul").animate({
+                   'margin-left': 0 + 'px'
+             },200);
+        });
+        $(".item2").click(function(){
+             $(".item1").removeClass("onclick");
+             $(".item3").removeClass("onclick");
+             $(this).addClass("onclick");
+             $(".changebox-ul").animate({
+                   'margin-left': -260 + 'px'
+             },200);
+        });
+        $(".item3").click(function(){
+             $(".item1").removeClass("onclick");
+             $(".item2").removeClass("onclick");
+             $(this).addClass("onclick");
+             $(".changebox-ul").animate({
+                   'margin-left': -520 + 'px'
+             },200);
+        });
+        /*推荐banner轮播*/
+        var CT = 0;
+        function changeLeft() {
+
+        /*设置图片切换时底部按钮跟随切换*/
+        if (CT == 0) {
+            $(".onh2").addClass("onhover").removeClass("changeitem-span");
+            $(".onh1").removeClass("onhover").addClass("changeitem-span");
+            $(".onh3").removeClass("onhover").addClass("changeitem-span");
+        }
+        if (CT == -260) {
+            $(".onh3").removeClass("changeitem-span").addClass("onhover");
+            $(".onh1").removeClass("onhover").addClass("changeitem-span");
+            $(".onh2").removeClass("onhover").addClass("changeitem-span");
+        }
+        if (CT == -520) {
+            CT = 260;
+            $(".onh1").removeClass("changeitem-span").addClass("onhover");
+            $(".onh2").removeClass("onhover").addClass("changeitem-span");
+            $(".onh3").removeClass("onhover").addClass("changeitem-span");
+        }
+        CT -= 260;
+        //console.log(CT);
+        /*图片切换*/
+        $(".changeitem-imgbox").animate({
+            'margin-left': CT
+        },300)
+
+    }
+        /*间隔*/
+        var CTime;
+        CTime = setInterval(changeLeft, 5000);
+        $(".broadcast-changeitem").hover(function(){
+            clearInterval(CTime);
+        },function(){
+            CTime = setInterval(changeLeft, 5000);
+        });
+    
+        /*推荐banner切换及滑动效果*/
+        $(".onh1").hover(function(){
+             $(this).removeClass("changeitem-span").addClass("onhover");
+             $(".onh2").removeClass("onhover").addClass("changeitem-span");
+             $(".onh3").removeClass("onhover").addClass("changeitem-span");
+             $(".changeitem-imgbox").animate({
+                   'margin-left': 0 + 'px'
+             },300);
+        })
+        $(".onh2").hover(function(){
+             $(this).removeClass("changeitem-span").addClass("onhover");
+             $(".onh1").removeClass("onhover").addClass("changeitem-span");
+             $(".onh3").removeClass("onhover").addClass("changeitem-span");
+             $(".changeitem-imgbox").animate({
+                   'margin-left': -260 + 'px'
+             },300);
+        })
+        $(".onh3").hover(function(){
+             $(this).removeClass("changeitem-span").addClass("onhover");
+             $(".onh1").removeClass("onhover").addClass("changeitem-span");
+             $(".onh2").removeClass("onhover").addClass("changeitem-span");
+             $(".changeitem-imgbox").animate({
+                   'margin-left': -520 + 'px'
+             },300);
+        })
+});

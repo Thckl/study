@@ -1188,3 +1188,177 @@
 .dynamic-video-li:hover .dynamic-videobox-hover{
     opacity: 1;
 }
+
+/*直播右侧选项卡切换*/
+.onLive-broadcast-right{
+    width: 260px;
+    height: 368px;
+    float: left;
+    margin-left: 30px;
+}
+.broadcast-right-item{
+    float: left;
+    cursor: pointer;
+    margin: 12px 10px 0 0 ;
+    font: 12px Helvetica Neue, Helvetica, Arial, Microsoft Yahei, Hiragino Sans GB, Heiti SC, WenQuanYi Micro Hei, sans-serif;
+    color: rgba(0,0,0,0.80);
+    padding-bottom: 8px;
+    transition: all .3s;
+    border-bottom: 1.5px solid white;
+}
+.onclick{
+    color: aquamarine;
+    border-bottom: 1.5px solid aquamarine;
+}
+.broadcast-right-item:hover {
+    color:aquamarine;
+}
+.broadcast-changebox{
+    height: 342px;
+    width: 260px;
+    float:left; 
+    margin-top: 7px;
+    overflow: hidden;
+}
+.changebox-ul{
+    width: 780px;
+    height: 342px;
+    margin-left: -520px;
+}
+.broadcast-changeitem{
+    width: 260px;
+    height: 342px;
+    float: left;
+    overflow: hidden;
+}
+.livehot1{
+    float: left;
+    margin-top: 15px;
+}
+.hot1{
+    float: left;
+    line-height: 18px;
+    padding: 0 4px;
+    color: white;
+    border-radius: 2px;
+    margin:0;
+    background-color:#f25d8e;
+    font: 12px Helvetica Neue, Helvetica, Arial, Microsoft Yahei, Hiragino Sans GB, Heiti SC, WenQuanYi Micro Hei, sans-serif;
+    font-weight: bold;
+}
+.hot2{
+    float: left;
+    line-height: 18px;
+    padding: 0 4px;
+    color: white;
+    border-radius: 2px;
+    margin:0;
+    background-color:rgba(0,0,0,0.40);
+    font: 12px Helvetica Neue, Helvetica, Arial, Microsoft Yahei, Hiragino Sans GB, Heiti SC, WenQuanYi Micro Hei, sans-serif;
+    font-weight: bold;
+}
+.changeitem1-headpic{
+    float: left;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-left: 6px;
+}
+.changeitem1-upid{
+    float: left;
+    font: 12px Helvetica Neue, Helvetica, Arial, Microsoft Yahei, Hiragino Sans GB, Heiti SC, WenQuanYi Micro Hei, sans-serif;
+    color: rgba(0,0,0,0.80);
+    margin-left: 10px;
+    width: 138px;
+}
+.changeitem1-upid:hover{
+    color: aquamarine;
+}
+.changeitem1-icon{
+    float: left;
+    margin-top: 1px;
+}
+.changeitem1-number{
+    float: left;
+    font: 12px Helvetica Neue, Helvetica, Arial, Microsoft Yahei, Hiragino Sans GB, Heiti SC, WenQuanYi Micro Hei, sans-serif;
+    color: rgba(0,0,0,0.40);
+}
+.changeitem1-title{
+    float: left;
+    margin-left: 10px;
+    margin-top: 4px;
+    width: 180px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow:ellipsis;
+    font: 12px Helvetica Neue, Helvetica, Arial, Microsoft Yahei, Hiragino Sans GB, Heiti SC, WenQuanYi Micro Hei, sans-serif;
+    color: rgba(0,0,0,0.40);
+}
+.nothing{
+    float: left;
+    margin:14px 0 0 80px;
+    color: rgba(0,0,0,0.40);
+    font: 12px Helvetica Neue, Helvetica, Arial, Microsoft Yahei, Hiragino Sans GB, Heiti SC, WenQuanYi Micro Hei, sans-serif;
+}
+.changeitem-imgbox-limit{
+    float: left;
+    width: 260px;
+    height: 248px;
+    border-radius: 6px;
+}
+.changeitem-imgbox{
+    width: 780px;
+    height: 248px;
+    margin: 14px 0 0 0;
+}
+.changeitem-imgbox-li{
+    float: left;
+    width: 260px;
+    height: 248px;
+    border-radius: 6px;
+    overflow: hidden;
+}
+.changeitem-imgbox-limit2{
+    float: left;
+    margin-top: 20px;
+}
+.changeitem-imgbox-span{
+    float: left;
+    position: relative;
+    width: 100%;
+    height: 25px;
+    padding:5px 0 0 10px;
+    margin: -54px 0 0 0;
+    background-color: rgba(0,0,0,0.50);
+    color: white;
+    font: 14px Helvetica Neue, Helvetica, Arial, Microsoft Yahei, Hiragino Sans GB, Heiti SC, WenQuanYi Micro Hei, sans-serif;
+}
+.changeitem-buttonbox{
+    float: left;
+    width: 160px;
+    height: 14px;
+    padding:8px 0 0 100px;
+    margin-top: -20px;
+    background-color: rgba(0,0,0,.8);
+    border-radius: 0 0 6px 6px;
+}
+.changeitem-span{
+    float: left;
+    width: 10px;
+    height: 6px;
+    margin-right: 8px;
+    background-color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all .2s;
+}
+.onhover{
+    float: left;
+    width: 30px;
+    height: 6px;
+    border-radius: 10px;
+    margin-right: 8px;
+    cursor: pointer;
+    background-color: #f25d8e;
+    transition: all .2s;
+}
